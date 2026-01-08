@@ -208,6 +208,28 @@
       margin-top: 3px;
     }
 
+    /* ✅ ADDITION (Option B): Polar bear on the right of Reviews */
+    .reviews-wrap{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items:start;
+    }
+    .reviews-left{min-width:0;}
+    .review-mascot{
+      align-self:start;
+      position: sticky;
+      top: 120px;
+    }
+    .review-mascot img{
+      width: 140px;
+      height:auto;
+      display:block;
+      border-radius: 16px;
+      opacity: 0.96;
+      filter: drop-shadow(0 18px 30px rgba(0,0,0,0.35));
+    }
+
     footer{
       padding: 26px 0;
       border-top:1px solid rgba(255,255,255,0.14);
@@ -223,6 +245,16 @@
       .grid2{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
       .logo{height:42px;}
+
+      /* ✅ Reviews mascot stacks under on mobile */
+      .reviews-wrap{grid-template-columns:1fr}
+      .review-mascot{
+        position: static;
+        display:flex;
+        justify-content:center;
+        margin-top: 14px;
+      }
+      .review-mascot img{width: 120px;}
     }
   </style>
 </head>
@@ -392,43 +424,54 @@
       <h2>Customer Reviews</h2>
       <p>Real feedback from clients who chose Ojeda Climate Solutions.</p>
 
-      <div class="grid3">
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            “Quick response and very professional. Our AC was blowing warm air and they fixed it the same day.
-            Explained everything clearly and pricing was fair.”
-          </p>
-          <div class="review-name">— Daniel M.</div>
-          <div class="review-sub">AC Repair • Houston, TX</div>
+      <!-- ✅ ADDITION (Option B): Wrap reviews + mascot -->
+      <div class="reviews-wrap">
+        <div class="reviews-left">
+          <div class="grid3">
+            <div class="card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                “Quick response and very professional. Our AC was blowing warm air and they fixed it the same day.
+                Explained everything clearly and pricing was fair.”
+              </p>
+              <div class="review-name">— Daniel M.</div>
+              <div class="review-sub">AC Repair • Houston, TX</div>
+            </div>
+
+            <div class="card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                “Installed a new system and the whole process was smooth. Clean work, great communication,
+                and our home cools better than ever.”
+              </p>
+              <div class="review-name">— Ashley R.</div>
+              <div class="review-sub">HVAC Installation • Houston, TX</div>
+            </div>
+
+            <div class="card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                “Very knowledgeable and honest. They didn’t try to upsell — just gave options and helped us choose
+                what made sense. Highly recommend.”
+              </p>
+              <div class="review-name">— Kevin T.</div>
+              <div class="review-sub">Maintenance • Houston, TX</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#contact">Get Your Free Estimate</a>
+            <a class="btn" href="tel:2817630034">English: 281-763-0034</a>
+            <a class="btn" href="tel:8323641686">Español: 832-364-1686</a>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            “Installed a new system and the whole process was smooth. Clean work, great communication,
-            and our home cools better than ever.”
-          </p>
-          <div class="review-name">— Ashley R.</div>
-          <div class="review-sub">HVAC Installation • Houston, TX</div>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="review-text">
-            “Very knowledgeable and honest. They didn’t try to upsell — just gave options and helped us choose
-            what made sense. Highly recommend.”
-          </p>
-          <div class="review-name">— Kevin T.</div>
-          <div class="review-sub">Maintenance • Houston, TX</div>
+        <!-- ✅ Polar bear mascot on the right -->
+        <div class="review-mascot" aria-hidden="false">
+          <img src="polarbear.png" alt="Ojeda Climate Solutions Polar Bear Logo">
         </div>
       </div>
 
-      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#contact">Get Your Free Estimate</a>
-        <a class="btn" href="tel:2817630034">English: 281-763-0034</a>
-        <a class="btn" href="tel:8323641686">Español: 832-364-1686</a>
-      </div>
     </div>
   </section>
 
@@ -455,6 +498,7 @@
   </script>
 </body>
 </html>
+
 
 
 
